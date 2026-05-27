@@ -1,58 +1,68 @@
-Harmonybrew
+# Harmonybrew
 
-The Harmonybrew project is a port of Homebrew to the OpenHarmony platform, providing HarmonyOS users with an out-of-the-box package manager and accompanying software repository, supporting operation on various HarmonyOS devices such as HarmonyOS PCs, HarmonyOS development boards, and HarmonyOS containers.
+The Harmonybrew project is an initiative to port Homebrew to the OpenHarmony platform, providing HarmonyOS users with an out-of-the-box package manager and accompanying software repositories. It supports various types of HarmonyOS devices, including HarmonyOS PCs, HarmonyOS development boards, and HarmonyOS containers.
 
-Device Support
+## Device Support
 
-Device Type | Representative Product | Minimum System Version | Command Line Environment | Architecture | Support Level
+<table>
+  <thead>
+    <tr>
+      <th>Device Type</th>
+      <th>Representative Products</th>
+      <th>Minimum System Version</th>
+      <th>Command-Line Environment</th>
+      <th>Architecture</th>
+      <th>Support Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HarmonyOS PC</td>
+      <td>HUAWEI MateBook Pro</td>
+      <td>HarmonyOS 6.1.0.117 SP68</td>
+      <td>HiShell</td>
+      <td>arm64</td>
+      <td>Tier 2 (Low)</td>
+    </tr>
+    <tr>
+      <td>HarmonyOS Development Board</td>
+      <td>dayu200(rk3568)</td>
+      <td>OpenHarmony 6.1</td>
+      <td>hdc shell</td>
+      <td>arm64</td>
+      <td>Tier 1 (High)</td>
+    </tr>
+    <tr>
+      <td>HarmonyOS Container</td>
+      <td>
+        <a href="https://github.com/hqzing/dockerharmony">DockerHarmony</a>
+      </td>
+      <td>OpenHarmony 6.1</td>
+      <td>Any</td>
+      <td>arm64</td>
+      <td>Tier 1 (High)</td>
+    </tr>
+  </tbody>
+</table>
 
-HarmonyOS PC | HUAWEI MateBook Pro | HarmonyOS 6.1.0.117 SP68 | HiShell arm64 | Tier 2 (Low)
+> **💡 About Platform Compatibility**
+>
+> As the commercial distribution of OpenHarmony, HarmonyOS can theoretically inherit its ecosystem, so this project can also run on HarmonyOS.
+>
+> However, please note: the ability to run does not imply full support. Some software packages function normally on development boards (hdc shell) or in containers, but may be restricted in the HiShell environment on HarmonyOS PC due to factors such as **system security restrictions**. This is a native system-level limitation and not an issue with the project itself.
 
-HarmonyOS Development Board | dayu200 (rk3568) | OpenHarmony 6.1 | hdc shell | arm64 | Tier 1 (High)
+## Installation Guide
 
-HarmonyOS Container | DockerHarmony | OpenHarmony 6.1 | Any arm64 | Tier 1 (High)
+- [HarmonyOS PC](./zh-CN/user/install.md#Harmony-PC)
+- [HarmonyOS Development Board](./zh-CN/user/install.md#HarmonyOS-Development-Board)
+- [HarmonyOS Container](./zh-CN/user/install.md#HarmonyOS-Container)
 
+## Common Operations
 
-💡 About Platform Compatibility
+The following are some common Homebrew operations. For more information, please refer to the [Homebrew Official Documentation](https://docs.brew.sh/)
 
+```sh
+zsh -c “$(curl -fsSL https://harmonybrew.atomgit.com/install.sh)”        # Install HarmonyOS version of Homebrew
+zsh -c “$(curl -fsSL https://harmonybrew.atomgit.com/uninstall.sh)” 
 
-HarmonyOS, as a commercial distribution of OpenHarmony, theoretically inherits its ecosystem, so this project can also run on HarmonyOS.
-
-
-However, please note: Running does not guarantee perfect support. Some packages may function correctly on the development board (hdc shell) or in containers, but may be limited in the HarmonyOS PC's HiShell environment due to system security restrictions or other factors. This is a system-level native limitation, not a problem with the project itself.
-
-
-Installation Guide
-
-HarmonyOS PC
-
-HarmonyOS Development Board
-
-HarmonyOS Container
-
-Common Operations
-
-The following are some commonly used Homebrew operations. For more information, please refer to the official Homebrew documentation.
-
-`zsh -c "$(curl -fsSL https://harmonybrew.atomgit.com/install.sh)" # Install HarmonyOS version of Homebrew
-`zsh -c "$(curl -fsSL https://harmonybrew.atomgit.com/uninstall.sh)" # Uninstall HarmonyOS version of Homebrew
-`brew update # Update Homebrew package manager and package index
-`brew formulae # List the available packages in the software repository
-`brew search [keyword] # Search for packages in the software repository by keyword
-`brew install [formula] # Install a package
-`brew uninstall [formula] # Uninstall a package
-`brew list # View the list of installed packages
-`rm -rf $(brew --cache) # Clear the cache` `/storage/Users/currentUser/.harmonybrew` # Completely delete the Homebrew installation directory (cleaner than an uninstallation script)
-
-Note: Homebrew is a "rolling update" package management system. Its package version maintenance strategy differs from apt in Ubuntu or yum in Red Hat. If you are unfamiliar with Homebrew or other rolling update package management systems, please familiarize yourself with their characteristics to avoid confusion.
-
-Other Documentation
-
-Contribution Guidelines
-
-Feedback
-
-Community Notices
-
-FAQ
-Featured Software
+Translated with DeepL.com (free version)
